@@ -10,7 +10,7 @@ jobs:
      - name: Set matrix data
        id: set-matrix
        run: echo "matrix=${{ vars.MATRIX }}" >> $GITHUB_OUTPUT
-     - run: echo $GITHUB_OUTPUT
+     - run: echo "$GITHUB_OUTPUT"
   print:
     runs-on: ubuntu-latest
     needs: getMatrix
