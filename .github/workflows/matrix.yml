@@ -1,0 +1,10 @@
+name: Matrix
+on:
+  workflow_dispatch:
+jobs:
+  print:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: ${{ fromJson(vars.MATRIX) }}
+    steps:
+     - run: echo ${{ matrix }}
