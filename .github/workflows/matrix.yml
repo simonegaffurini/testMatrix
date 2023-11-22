@@ -6,6 +6,6 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        var: ${{ fromJson(vars.MATRIX) }}
+        env: ${{ fromJson(vars.MATRIX) }}
     steps:
-     - run: echo ${{ matrix.var }}
+      - run: echo ${{ secrets[format('{0}_USER', matrix.env)] }}
