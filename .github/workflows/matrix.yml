@@ -5,6 +5,6 @@ jobs:
   print:
     runs-on: ubuntu-latest
     strategy:
-      matrix: ${{ fromJson(vars.MATRIX) }}
+      matrix: ${{ fromJson(${{ vars.MATRIX }}) }}
     steps:
      - run: echo ${{ matrix }}
